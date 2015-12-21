@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import mvp_master.xbus.receiver.BusReceiver;
+import mvp_master.xbus.annotation.BusReceiver;
 import mvp_master.xbus.utils.Helper;
 
 /**
@@ -18,6 +18,11 @@ import mvp_master.xbus.utils.Helper;
 public class Bus {
 
     private Map<Object,List<Method>> mMethodMap=new HashMap<>();
+
+    public enum EventMode {
+
+        Sender, Main, Thread
+    }
 
     public void register(final Object target){
         List<Method> methods= Helper.findAnnotatedMethods(target.getClass(), BusReceiver.class);
