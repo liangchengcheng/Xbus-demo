@@ -17,6 +17,7 @@ import mvp_master.xbus.utils.Helper;
  */
 public class Bus {
 
+    // TODO: 2015/12/21 跟着文章一起来 
     private Map<Object,List<Method>> mMethodMap=new HashMap<>();
 
     public enum EventMode {
